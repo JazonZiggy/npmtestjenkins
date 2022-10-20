@@ -15,14 +15,14 @@ pipeline {
                 sh 'npm config set timeout=100000'
                 sh 'npm set registry=https://registry.npmjs.org/'
                 sh 'npm cache clean --force'
-                try {
-                    sh 'npm install'
-                } catch (err){
-                    echo err.getMessage()
-                    sh 'npm install'
+                script{
+                    try {
+                        sh 'npm install'
+                    } catch (err){
+                        echo err.getMessage()
+                        sh 'npm install'
+                    }                    
                 }
-                    
-            }
         }
         stage('Test') {
             steps {
