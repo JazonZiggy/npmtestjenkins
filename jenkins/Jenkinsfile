@@ -2,7 +2,7 @@ pipeline {
     agent {
         docker {
             image 'node:lts-buster-slim'
-            args "-p 3000:3000 -e HTTP_PROXY='http://proxy:3128' -e HTTPS_PROXY='http://proxy:3128'"
+            args "-p 3000:3000 -network host"
         }
     }
     
