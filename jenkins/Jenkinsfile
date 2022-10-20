@@ -20,11 +20,11 @@ pipeline {
                 sh 'npm cache clean --force'
                 script{
                     try {
-                        sh 'npm install'
+                        sh 'npm ci'
                     } catch (err){
                         echo err.getMessage()
                         sh 'npm cache verify'
-                        sh 'npm install'
+                        sh 'npm ci'
                     }                    
                 }
             }
