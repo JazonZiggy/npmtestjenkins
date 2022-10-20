@@ -21,6 +21,7 @@ pipeline {
                         sh 'npm install'
                     } catch (err){
                         echo err.getMessage()
+                        sh 'npm cache verify'
                         sh 'npm install'
                     }                    
                 }
