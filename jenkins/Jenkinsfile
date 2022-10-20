@@ -12,6 +12,7 @@ pipeline {
                 sh 'npm config set proxy=http://proxy:3128'
                 sh 'npm config set http-proxy=http://proxy:3128'
                 sh 'npm config set https-proxy=http://proxy:3128'
+                sh 'npm config set https_proxy=http://proxy:3128'
                 sh 'npm config set timeout=100000'
                 sh 'npm set registry=https://registry.npmjs.org/'
                 sh 'npm cache clean --force'
