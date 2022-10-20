@@ -17,7 +17,7 @@ pipeline {
                 sh 'git config --global http.proxy http://proxy:3128'
                 sh 'git config --global https.proxy http://proxy:3128'
                 sh 'npm cache clean --force'
-                sh 'npm install'
+                sh 'npm install --force'
                                      
                 }
             
