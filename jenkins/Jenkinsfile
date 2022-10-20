@@ -13,18 +13,18 @@ pipeline {
                 sh 'npm config set http-proxy=http://proxy:3128'
                 sh 'npm config set https-proxy=http://proxy:3128'
                 sh 'npm config set https_proxy=http://proxy:3128'
-                sh 'npm config set timeout=100000'
+                sh 'npm config set timeout=300000'
                 sh 'git config --global http.proxy http://proxy:3128'
                 sh 'git config --global https.proxy http://proxy:3128'
                 sh 'npm set registry=https://registry.npmjs.org/'
                 sh 'npm cache clean --force'
                 script{
                     try {
-                        sh 'npm ci'
+                        sh 'npm install'
                     } catch (err){
                         echo err.getMessage()
                         sh 'npm cache verify'
-                        sh 'npm ci'
+                        sh 'npm install'
                     }                    
                 }
             }
