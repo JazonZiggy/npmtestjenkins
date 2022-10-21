@@ -20,7 +20,6 @@ pipeline {
                 sh 'npm config set registry http://registry.npmjs.org'
                 sh 'npm cache clean --force'
                 sh 'ls'
-                sh 'rm -r node_modules'
                 sh 'npm install'
                 
                                      
