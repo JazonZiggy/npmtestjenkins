@@ -33,7 +33,7 @@ pipeline {
         }
         stage('Deliver') {
             steps {
-                sh 'DeliverFinalizado'
+                sh ' echo DeliverFinalizado'
             }
         }
     }
