@@ -16,8 +16,10 @@ pipeline {
                 sh 'npm config set timeout=600000'
                 sh 'git config --global http.proxy http://proxy:3128'
                 sh 'git config --global https.proxy http://proxy:3128'
+                sh 'npm config set strict-ssl false'
                 sh 'npm cache clean --force'
                 sh 'npm install --force'
+                
                                      
                 }
             
